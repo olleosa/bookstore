@@ -1,0 +1,88 @@
+<html>
+  <header>
+    <link rel="stylesheet" href="../styles.css">
+    <title>Look Inna Book</title>
+    <h1>Look Inna Book </h1>
+
+    <div id="ownerHeader">
+      <p>Welcome back owner!
+        <button type="button" onclick="signOutOwner()">Sign Out</button>
+      </p>
+    </div>
+  </header>
+
+  <body>
+    <button type="button" id="salesReportBtn" onclick="showSalesReport()">Sales Report</button>
+    <button type="button" id="deleteBookBtn" onclick="showDeleteBook()">Delete Book from Store</button>
+    <button type="button" id="addBookBtn" onclick="showAddBook()">Add Book to Store</button>
+
+    <br><br>
+
+    <div id="generateSalesReport" class="ownerQuery">
+      <h3>Generate a Sales Report: </h3>
+
+      <label for="yearly">Year: </label>
+      <select id="yearly">
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+      </select><br>
+
+      <label for="monthly">Month: </label>
+      <select id="monthly">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+      </select><br>
+
+      <label for="perAuthor">Sales per Author? </label><input type="radio" id="perAuthor" name="filter" checked=true value="authors"><br>
+      <label for="perGenre">Sales per Genre? </label><input type="radio" id="perGenre" name="filter" value="genre"><br>
+      <label for="perCity">Sales per City? </label><input type="radio" id="perCity" name="filter" value="city"><br>
+      <label for="perCountry">Sales per Country? </label><input type="radio" id="perCountry" name="filter" value="country"><br>
+
+      <button type="button" id="getReportBtn" onclick="getSalesReport()">Get Sales Report</button>
+
+      <!-- ADD THE RESULT OF THE QUERY TO THIS DIV -->
+      <div id="salesReport"></div>
+
+    </div>
+
+    <div id="addBook" class="ownerQuery">
+      <h3>Add a Book to the Store: </h3>
+      <label for="isbn">ISBN (11): </label><input type="text" id="isbn" placeholder="isbn"><br>
+      <label for="title">Book Title: </label><input type="text" id="title" placeholder="title"><br>
+      <label for="authors">Authors: </label><input type="text" id="authors" placeholder="author"><br>
+      <label for="avgRating">Average Rating: </label><input type="text" id="avgRating" placeholder="average rating"><br>
+      <label for="pages">Number of pages: </label><input type="text" id="pages" placeholder="number of pages"><br>
+      <label for="numRatings">Number of Ratings: </label><input type="text" id="numRatings" placeholder="number of ratings"><br>
+      <label for="publisher">Publisher Name: </label><input type="text" id="publisher" placeholder="publisher"><br>
+      <label for="commissionPercent">Percent of Sale to Publisher: </label><input type="text" id="commissionPercent" placeholder="percent to publisher"><br>
+      <label for="quantity">Quantity in Stock: </label><input type="text" id="quantity" placeholder="quantity in stock"><br>
+      <label for="genre">Book Genre: </label><input type="text" id="genre" placeholder="genre"><br>
+      <label for="price">Book Price: </label><input type="text" id="price" placeholder="price"><br>
+
+      <button type="button" id="addBtn" onclick="addBook()">Add Book</button>
+    </div>
+
+    <div id="delBook" class="ownerQuery">
+      <h3>Delete a Book from the Store: </h3>
+      <label for="del_ISBN">ISBN (11): </label><input type="text" id="delISBN" placeholder="isbn"><br>
+      <button type="button" id="delBtn" onclick="deleteBook()">Delete Book</button>
+    </div>
+
+  </body>
+
+  <script src="../client.js"></script>
+
+</html>
