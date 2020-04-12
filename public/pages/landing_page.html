@@ -1,0 +1,107 @@
+<html>
+  <header>
+    <link rel="stylesheet" href="../styles.css">
+    <title>Look Inna Book</title>
+    <h1>Look Inna Book</h1>
+
+    <!-- asks user for their login info. Should already have an account
+    will be hidden when they have logged in -->
+    <div id="loginInfo">
+      <input type="text" id="usernameTb" placeholder="username">
+      <input type="text" id="passwordTb" placeholder="password">
+      <button type="button" id="loginBtn" onclick="login()">Login</button>
+    </div>
+
+    <!-- displays this when user has logged into their account -->
+    <div id="loggedIn" style="display:none;">
+      <p>Welcome to Look Inna Book!
+        <button type="button" id="myOrdersBtn" onclick="showOrders()">My Orders</button>
+        <button type="button" id="cartBtn" onclick="openCart()">My Cart</button>
+        <button type="button" id="signOut" onclick="signOut()">Sign Out</button>
+      </p>
+    </div>
+  </header>
+
+  <body>
+    <!-- sign up area for new users.
+    this will be hidden if they are logged in or have signed up -->
+    <div id="signUpInfo" class="center">
+      <p>Don't have an account? Sign up today! <br>
+        <label for="newUsername">Username: </label><input type="text" id="newUsername" placeholder="username"><br>
+        <label for="newPassword">Password: </label><input type="text" id="newPassword" placeholder="password"><br>
+      </p>
+
+      <p>Billing Address: <br>
+        <label for="newBillStrNo">Street Number: </label><input type="text" id="newBillStrNo" placeholder="street number"><br>
+        <label for="newBillStrName">Street Name: </label><input type="text" id="newBillStrName" placeholder="street name"><br>
+        <label for="newBillCity">City: </label><input type="text" id="newBillCity" placeholder="city"><br>
+        <label for="newBillCountry">Country: </label><input type="text" id="newBillCountry" placeholder="country"><br>
+      </p>
+
+      <p>Shipping Address: <br>
+        <label for="newShipStrNo">Street Number: </label><input type="text" id="newShipStrNo" placeholder="street number"><br>
+        <label for="newShipStrName">Street Name: </label><input type="text" id="newShipStrName" placeholder="street name"><br>
+        <label for="newShipCity">City: </label><input type="text" id="newShipCity" placeholder="city"><br>
+        <label for="newShipCountry">Country: </label><input type="text" id="newShipCountry" placeholder="country"><br>
+      </p>
+
+      <button type="button" id="signUpBtn" onclick="signUp()">Sign Up</button><br>
+    </div>
+
+    <!-- query area for finding books -->
+    <div id="findingBooks" class="after">
+      <input type="text" id="searchbar" placeholder="Search for a book...">
+      <select id="searchOptions">
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+        <option value="isbn">ISBN</option>
+      </select>
+      <select id="genres">
+        <option value="none">Genres</option>
+      </select>
+      <button type="button" onclick="search()">Search</button>
+
+    </div>
+
+    <div id="queryResults" class="query"></div>
+
+    <div id="cart" class="modal">
+      <div class="content">
+        <span onclick="closeModal()" style="float:right;">Close Cart</span>
+        <h3>My Cart</h3>
+        <div id="cartItems">hello</div>
+        <button type="button" onclick="checkOut()">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <div id="checkOut" class="modal" >
+      <div class="content">
+        <span onclick="closeModal()" style="float:right;">Cancel Checkout</span>
+        <h3>Shipping Address:</h3>
+          <label for="shipStrNo">Street Number: </label><input type="text" id="shipStrNo" placeholder="street number"><br>
+          <label for="shipStrName">Street Name: </label><input type="text" id="shipStrName" placeholder="street name"><br>
+          <label for="shipCity">City: </label><input type="text" id="shipCity" placeholder="city"><br>
+          <label for="shipCountry">Country: </label><input type="text" id="shipCountry" placeholder="country"><br>
+
+        <h3>Billing Address: </h3>
+          <label for="billStrNo">Street Number: </label><input type="text" id="billStrNo" placeholder="street number"><br>
+          <label for="billStrName">Street Name: </label><input type="text" id="billStrName" placeholder="street name"><br>
+          <label for="billCity">City: </label><input type="text" id="billCity" placeholder="city"><br>
+          <label for="billCountry">Country: </label><input type="text" id="billCountry" placeholder="country"><br>
+
+        <button type="button" onclick="placeOrder()">Place Order</button>
+      </div>
+    </div>
+
+    <div id="orders" class="modal" >
+      <div class='content'>
+        <span onclick="closeModal()" style="float:right;">Close</span>
+        <h3>My Orders: </h3>
+        <div id="userOrders"></div>
+      </div>
+    </div>
+
+  </body>
+
+  <script src="../client.js"></script>
+</html>
