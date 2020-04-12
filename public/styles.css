@@ -1,0 +1,57 @@
+header{
+  text-align:center;
+  margin: auto;
+
+}
+
+body{
+  text-align: center;
+  margin: auto;
+
+}
+
+.center{
+  display: inline-block;
+  text-align: left;
+  margin: auto;
+}
+
+.after{
+  display:none;
+  width: 50%;
+  margin:auto;
+}
+
+.query{
+  display: none;
+  margin:auto;
+  width:33%;
+  text-align: left;
+}
+
+.ownerQuery{
+  display: none;
+  margin:auto;
+  padding-left: 40%;
+  text-align: left;
+
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  padding-top:100px;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow:auto;
+}
+
+.content{
+  background-color: #fefefe;
+  margin:auto;
+  padding:20px;
+  border:5px solid;
+  width:30%;
+}
